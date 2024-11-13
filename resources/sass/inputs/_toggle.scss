@@ -1,0 +1,49 @@
+.toggle-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 30px; /* Tamaño reducido a la mitad */
+    height: 17px; /* Tamaño reducido a la mitad */
+  }
+  
+  .toggle-checkbox {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 17px; /* Ajuste del borde redondeado para coincidir con el tamaño */
+  }
+  
+  .toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 13px; /* Tamaño reducido a la mitad */
+    width: 13px; /* Tamaño reducido a la mitad */
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+  
+  .toggle-checkbox:checked + .toggle-slider {
+    background-color: #4caf50; /* Color del fondo cuando está activado */
+  }
+  
+  .toggle-checkbox:checked + .toggle-slider:before {
+    transform: translateX(13px); /* Movimiento del toggle reducido */
+  }
+  
+  .flex.items-center label {
+    margin-right: 0.5rem; /* Ajusta la separación entre el texto y el toggle */
+  }
+  

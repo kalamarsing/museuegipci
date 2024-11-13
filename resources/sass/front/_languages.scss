@@ -1,0 +1,72 @@
+.languages {
+    display: flex;
+    flex-direction: column; // Apilados uno debajo del otro
+    gap: 20px; // Espacio entre los recuadros
+    position: absolute;
+    top: 134px; // A 134px del top
+    left: 50px; // A 50px del lado izquierdo
+}
+
+.square {
+    width: 55px;
+    height: 55px;
+    background-color: #2E2833; // Fondo negro
+    border-radius: 7px; // Esquinas redondeadas de 7px
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 19px; // Tamaño de la fuente
+    line-height: 25px; // Interlineado
+    text-transform: uppercase; // Texto en mayúsculas
+    font-weight: $font-weight-regular; // Regular
+    color: #FFFAFA; // Texto en blanco (#FFFAFA)
+    box-sizing: border-box;
+    &.active{
+        background-color: #E2E0E0; // Fondo negro
+        color: #2E2833;
+        border: 1px solid #2E2833;
+    }
+}
+
+
+.image-container {
+    display: flex;
+    justify-content: center; // Centrar la imagen horizontalmente
+    align-items: flex-end; // Alinear la imagen hacia abajo
+    position: absolute;
+    bottom: 62px; // A 62px de la parte inferior
+    left: 27px; // A 27px de la izquierda
+    right: 27px; // A 27px de la derecha
+}
+
+.image-container img {
+    max-width: 100%; // Mantener la imagen dentro de los márgenes
+    height: auto; // Mantener la proporción de la imagen
+}
+
+
+nav {
+
+
+    .idiomes-button {
+        display: inline-flex; // Asegurarse de que el texto esté centrado
+        justify-content: center; // Centrar horizontalmente
+        align-items: center; // Centrar verticalmente
+        background-color: $primaryColor; // Fondo
+        border: 2px solid $secondaryColor; // Borde
+        border-radius: 7px; // Radio de borde
+        height: 37px; // Altura
+        min-width: 109px; // Ancho
+        margin-right: 20px; // Espacio a la derecha
+        text-transform: uppercase; // Texto en mayúsculas
+        font-family: 'Helvetica Neue', sans-serif; // Fuente
+        font-size: 19px; // Tamaño de la fuente
+        line-height: 25px; // Interlineado
+        color: #FFFAFA; // Color del texto
+        text-decoration: none; // Sin subrayado
+        
+        &:hover {
+            background-color: darken($primaryColor, 5%); // Cambiar fondo al pasar el ratón (opcional)
+        }
+    }
+}

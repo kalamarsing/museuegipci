@@ -1,0 +1,15 @@
+// resources/css/app.scss
+
+@import 'inputs/toggle'; // Importa variables y otros archivos parciales
+@import 'inputs/fileInput'; // Importa variables y otros archivos parciales
+@import 'front/variables';
+
+.map-pointer {
+    background-color: $primaryColor; // Usamos inline-flex para alinear el ícono y el texto en una línea horizontal
+}
+.map-pointer {
+    background-color: $primaryColor; 
+}
+.permanent-map-pointer{
+    background-color:#2E2833; 
+}

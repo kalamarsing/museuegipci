@@ -1,0 +1,31 @@
+.file-input-area {
+    border: 2px dashed #ccc;
+    border-radius: 4px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.file-input-area:hover {
+    border-color: #999;
+}
+
+.preview img {
+    max-width: 100%;
+    margin-top: 10px;
+}
+
+.preview button {
+    margin-top: 10px;
+}
+/* Botón de eliminación */
+.file-input-area .remove-image-button {
+    background-color: #dc2626; /* Rojo oscuro */
+    color: #ffffff; /* Texto blanco para contraste */
+    border: 1px solid #b91c1c; /* Borde rojo oscuro */
+}
+
+.file-input-area .remove-image-button:hover {
+    background-color: #b91c1c; /* Rojo más oscuro al pasar el ratón */
+    border-color: #991b1b; /* Borde rojo más oscuro al pasar el ratón */
+}

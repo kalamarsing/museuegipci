@@ -1,0 +1,536 @@
+// resources/css/app.scss
+
+@import 'front/variables'; // Importa variables y otros archivos parciales
+@import 'front/languages'; // Importa variables y otros archivos parciales
+@import 'front/code';
+@import 'front/audio';
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; // Evita el scroll horizontal
+    font-family: $font-family-base !important;
+}
+
+.min-h-screen {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-bk-image {
+    background-image: url("../assets/images/foto_portada.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; // Asegura que el fondo ocupe toda la pantalla
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    .header-image {
+        margin-top:54px;
+        width: 100%; // Ocupa el 100% del ancho
+        height: 98px; // Altura fija de la imagen
+        background-size: cover; // Mantiene la proporción de la imagen sin deformarla
+        background-position: center; // Centra la imagen
+        background-repeat: no-repeat; // Evita que la imagen se repita
+       /* &.museu{
+            background-image: url('../../storage/app/public/images/dama_de_la_casa.png');
+        }*/
+    }
+
+    .sections-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        box-sizing: border-box; // Incluye padding en el tamaño total
+        height: calc(100vh - 153px); // Ajusta esto según la altura de la cabecera (navbar)
+        &.no-header-image{
+            height: calc(100vh - 55px); // Ajusta esto según la altura de la cabecera (navbar)
+            margin-top: 55px;
+        }
+
+        &.floor-container{
+            background-color: #EFEFEF;
+            padding: 25px 50px;
+
+        }
+
+        .floor-title {
+            margin-top: 15px;
+            font-family: 'Helvetica Neue', sans-serif; // Ajusta según tus fuentes
+            font-weight: 500; // Medium
+            font-size: 23px;
+            line-height: 38px;
+            color: $primaryColor; // Utiliza el primaryColor definido
+            text-align: center;
+        }
+
+        // Contenedor con scroll si hay demasiados elementos
+        .element-list {
+            width: 100%;
+            margin-top: 40px;
+            padding: 0px 20px;
+            max-height: 400px; // Altura máxima del contenedor
+            overflow-y: auto; // Agregamos scroll vertical si hay muchos elementos
+            &.element-list-temporal{
+                margin-top: 25px;
+            }
+            &.element-list-permanent{
+                width: calc(100% + 100px); // Ancho total de la pantalla menos el padding
+                margin-left: -50px; // Margen negativo para ocupar todo el ancho
+                margin-right: -50px; // Margen negativo para ocupar todo el ancho
+                padding:0 70px;
+                background-size: cover; // Mantiene la proporción de la imagen sin deformarla
+                background-position: center; // Centra la imagen
+                background-repeat: no-repeat; // Evita que la imagen se repita
+                .permanent-title{
+                    color : #FFFAFA;
+                    text-align: center;
+                    font-weight: $font-weight-regular; // Negrita
+                    font-size: 19px;
+                    line-height: 25px;
+                    margin-top:17px;
+                    margin-bottom: 20px;
+                }
+                .element-item{
+                    .element-pointer{
+                        background-color: #2E2833;
+                    }
+                    a.element-button{
+                        border-color: #2E2833;
+                        background-color: #2E2833;
+                        color:#FFFAFA;
+                        display: block; // Asegura que ocupe todo el ancho disponible
+
+                    }
+                    // Estilo para el subtítulo
+                    .element-subtitle {
+                        display: block; // Asegura que esté en una nueva línea
+                        font-size: 16px;
+                        line-height: 20px;
+                        font-weight: normal; // Peso de fuente regular
+                        color: #FFFAFA; // Un color más suave para el subtítulo (puedes cambiarlo)
+                        margin-top: 5px; // Espaciado entre el título y el subtítulo
+                    }
+                }
+            }
+        }
+
+        .navigation-buttons {
+            position: absolute;
+            bottom: 25px; // Posición de los botones desde el fondo de la pantalla
+            left: 15px; // Botón izquierdo a 12px del borde de la pantalla
+            right: 15px; // Botón derecho a 12px del borde de la pantalla
+            display: flex;
+            justify-content: space-between; // Separar botones
+            width: calc(100% - 30px); // Ajustar el ancho de los botones
+            z-index: 10; // Asegurarse de que los botones se vean sobre otros elementos
+            background-color: #EFEFEF;
+            
+            .prev-button, .next-button {
+                padding: 10px 34px;
+                background-color: transparent;
+                border: 1px solid $primaryColor;
+                border-radius: 7px;
+                color: $primaryColor;
+                font-family: 'Helvetica Neue', sans-serif;
+                font-size: 19px;
+                line-height: 38px;
+                cursor: pointer;
+                text-transform: uppercase;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                max-width: 200px; // Máximo ancho para los botones
+    
+                &:hover {
+                 //   background-color: lighten($primaryColor, 40%);
+                }
+            }
+    
+            .prev-button {
+                margin-right: auto; // Alineado a la izquierda
+            }
+    
+            .next-button {
+                margin-left: auto; // Alineado a la derecha
+            }
+        }
+
+    
+        .element-item {
+            display: flex;
+            align-items: flex-start; // Alinear los elementos verticalmente
+            margin-bottom: 20px;
+        
+            .element-pointer {
+                width: 40px;
+                min-width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background-color: $primaryColor;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #EFEFEF;
+                font-size: 19px;
+                font-family: 'Helvetica Neue', sans-serif;
+                flex-shrink: 0; // Evita que la redonda se reduzca de tamaño
+                margin-right: 10px; // Espacio entre la redonda y el botón
+            }
+        
+            a.element-button {
+                flex-grow: 1; // Ocupar todo el espacio restante
+                padding: 10px 34px;
+                background-color: transparent;
+                border: 1px solid $primaryColor;
+                border-radius: 7px;
+                color: $primaryColor;
+                font-family: 'Helvetica Neue', sans-serif;
+                font-size: 19px;
+                line-height: 24px;
+                text-decoration: none;
+                text-align: left; // Alinear el texto a la izquierda
+                display: block; // Asegura que ocupe todo el ancho disponible
+                min-height: 40px; // Mantiene una altura mínima del botón
+                cursor: pointer;
+        
+                &:hover {
+                 //   background-color: lighten($primaryColor, 40%);
+                }
+                // Estilo para el subtítulo
+                .element-subtitle {
+                    display: block; // Asegura que esté en una nueva línea
+                    font-size: 16px;
+                    line-height: 20px;
+                    font-weight: normal; // Peso de fuente regular
+                    color: $primaryColor; // Un color más suave para el subtítulo (puedes cambiarlo)
+                    margin-top: 5px; // Espaciado entre el título y el subtítulo
+                }
+            }
+        }
+        
+    
+
+        
+
+        .section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 12px 25px 40px 25px; // padding superior 12px, lateral 25px, inferior 40px
+            background-color: #EFEFEF;
+            box-sizing: border-box; // Incluye padding en el tamaño total
+            overflow: hidden; // Previene que el contenido desborde
+
+            .section-image {
+                max-width: 100%;
+                max-height: calc(100% - 50px); // Limita la altura de la imagen para que no desborde
+                object-fit: contain; // Asegura que la imagen se ajuste dentro de su contenedor sin perder proporción
+                margin-bottom: 20px;
+            }
+
+            .section-button {
+                align-self: flex-start;
+                display: inline-block;
+                background-color: transparent;
+                padding: 7px 25px;
+                border-radius: 7px;
+                color: $primaryColor;
+                text-transform: uppercase;
+                font-family: 'Helvetica Neue', sans-serif;
+                font-weight: 400;
+                font-size: 19px;
+                line-height: 38px;
+                border: 1px solid $primaryColor;
+                cursor: pointer;
+                margin-top: auto; // Coloca el botón en la parte inferior de la sección
+                margin-left: 18px;
+            }
+
+            .button-and-info {
+                display: flex;
+                align-items: center; // Alinear verticalmente todos los elementos
+                align-self: flex-start;
+                .section-button {
+                    margin-right: 19px; // Espacio entre el botón y la imagen
+                }
+
+                .map-pointer-icon {
+                    width: 24px; // Tamaño de la imagen
+                    height: auto;
+                    margin-right: 10px; // Espacio entre la imagen y el texto
+                }
+
+                .visit-text {
+                    font-size: 19px;
+                    line-height: 38px;
+                    color: #D66767; // Color del texto
+                    flex: 1; // Para que ocupe el resto del espacio disponible
+                }
+            }
+        }
+
+        .section-border {
+            height: 1px;
+            background-color: $primaryColor;
+            width: 100%;
+        }
+    }
+}
+
+nav {
+    position: fixed; // Mantener la barra de navegación fija
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    width: 100%;
+    margin: 0;
+    padding: 0; // Asegúrate de que no haya padding
+    background-color: $primaryColor; // Color de fondo
+    border-bottom: 1px solid darken($primaryColor, 10%); // Borde en un tono más oscuro
+
+    // Estilo para los elementos de texto dentro de la navegación
+    a, .text-nav { // Asegúrate de aplicar el color a los enlaces o elementos específicos
+        color: $secondaryColor; // Color del texto
+        text-decoration: none; // Sin subrayado
+        padding: 10px 15px; // Espaciado alrededor del texto
+        display: inline-block; // Asegúrate de que el padding funcione correctamente
+
+        &:hover {
+           // color: lighten($secondaryColor, 10%); // Color del texto al pasar el ratón
+        }
+    }
+    .navbar-height {
+        height: 54px;
+        .logo-container {
+            left: -20px;
+            position: absolute;
+            top: -11.5px;
+        }
+    }
+    .button-hamburguer {
+        color: $secondaryColor;
+        svg {
+            height: 3rem;
+            width: 3rem;
+            margin-right: 16px;
+        }
+    }
+    .languages-nav-container {
+        flex-wrap: wrap;
+        .square {
+            margin: 5px;
+        }
+    }
+
+    .button-container {
+        margin-bottom: 14px; // Espacio entre botones
+    }
+    
+    .button {
+        display: flex; // Usamos flexbox para centrar
+        align-items: center; // Centrar verticalmente
+        justify-content: center; // Centrar horizontalmente
+        background-color: $primaryColor; // Fondo
+        border: 2px solid $secondaryColor; // Borde
+        border-radius: 7px; // Radio de borde
+        height: 50px; // Altura
+        padding: 0 16px; // Espaciado horizontal
+        text-decoration: none; // Sin subrayado en el enlace
+        color: white; // Color del texto (puedes ajustarlo)
+        
+        &:hover {
+          //  background-color: darken($primaryColor, 5%); // Cambiar fondo al pasar el ratón (opcional)
+        }
+    }
+    
+    .icon {
+        margin-right: 14px; // Espacio entre icono y texto
+        width: auto; // Ajustar el ancho del icono según sea necesario
+        height: 24px; // Altura del icono ajustada a 24px
+    }
+    
+    .button-text {
+        text-transform: uppercase; // Texto en mayúsculas
+        font-family: 'Helvetica Neue', sans-serif; // Fuente
+        font-size: 21px; // Tamaño de la fuente
+        line-height: 38px; // Interlineado
+        display: flex; // Usamos flexbox para centrar el texto
+        align-items: center; // Alinear el texto verticalmente
+        justify-content: center; // Centrar horizontalmente el texto
+    }
+
+    .text-link{
+        font-size: 17px; // Tamaño de la fuente
+        line-height: 23px; // Interlineado
+        color: $secondaryColor;
+        font-family: 'Helvetica Neue', sans-serif; // Fuente
+        text-align: center;
+        &.first{
+            margin-bottom: 8px; 
+        }
+        &.last{
+            margin-top: 14px; 
+        }
+    }
+
+    .museum-title {    
+        font-weight: $font-weight-bold; // Negrita
+    }
+
+    .text-link-style {
+        font-weight: $font-weight-regular; // Negrita
+        display: inline-block; // Permitir margenes y padding
+        margin: 0;
+        padding: 0;
+        &.text-link-medium{
+            font-weight: $font-weight-medium; // Negrita
+            margin-right: 5px; // Espacio a la derecha antes del punto
+        }
+    }
+
+}
+
+.margin-lateral-20{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.overlay-container {
+    background-color: rgba(46, 40, 51, 0.74); // Fondo con opacidad
+    padding: 103px 36px 49px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; // Para separar la parte superior de la inferior
+    height: 100%;
+    width: 100%;
+}
+
+.section-top {
+    overflow-y: auto; // Scroll si el texto es más alto que el contenedor
+    color: $secondaryColor; // Color del texto
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 19px;
+    line-height: 35px;
+}
+
+
+.section-bottom {
+    height: 100px; // La sección inferior tiene un tamaño fijo de 100px
+    display: flex;
+    justify-content: center; // Centrar el contenido horizontalmente
+    align-items: flex-end; // Posicionar el botón hacia la parte inferior
+}
+
+.map-pointer {
+    background-color: $primaryColor; 
+}
+.permanent-map-pointer{
+    background-color:#2E2833; 
+}
+.map-pointer-text{
+    color: #EFEFEF;
+}
+
+
+
+
+
+//ELEMENT
+
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 20; // Asegura que el header esté sobre otros elementos
+    background-color: rgba(0,0,0,0.4); // Color de fondo del header
+    display: flex;
+    justify-content: center; // Centramos el contenido horizontalmente
+    align-items: center; // Centramos verticalmente
+    padding: 10px 20px; // Espaciado interno
+    
+    min-height: 60px; // Altura mínima
+    height: auto; // Altura automática si el título es más largo
+    box-sizing: border-box; // Aseguramos que el padding se cuente dentro de la altura
+
+    .header-title {
+        color: $secondaryColor; // Color del texto
+        font-size: 21px; // Tamaño de la fuente
+        text-align: center; // Centramos el texto
+        flex-grow: 1; // Permitir que el título ocupe el espacio restante
+        padding: 0 50px; // Espaciado alrededor del título
+        line-height: 1.5; // Mejora la legibilidad del título en varias líneas
+    }
+
+    .close-button {
+        width: 48px;
+        height: 48px;
+        background-color: #FFFFFF;
+        border: 1px solid #707070;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        position: absolute;
+        right: 20px; // Aseguramos que esté en la esquina derecha
+    }
+
+    .close-icon {
+        color: #000; // Color del icono
+        font-size: 24px; // Tamaño del icono
+    }
+}
+
+
+
+
+
+.button-museu-container {
+    margin-top: 14px; // Espacio entre botones
+    display: flex; // Usamos flexbox para centrar el botón
+    justify-content: center; // Centrar horizontalmente el botón
+}
+
+.button-museu {
+    display: flex; // Usamos flexbox para centrar
+    align-items: center; // Centrar verticalmente
+    justify-content: center; // Centrar horizontalmente
+    background-color: $primaryColor; // Fondo
+    border-radius: 7px; // Radio de borde
+    height: 50px; // Altura
+    padding: 0 20px; // Espaciado horizontal (reduce para evitar que sea demasiado ancho)
+    width: fit-content; // El ancho se ajusta al contenido
+    text-decoration: none; // Sin subrayado en el enlace
+    color: #FFFAFA; // Color del texto
+
+    &:hover {
+        // Cambiar fondo al pasar el ratón (opcional)
+        // background-color: darken($primaryColor, 5%);
+    }
+}
+
+.icon-museu {
+    margin-right: 14px; // Espacio entre icono y texto
+    width: auto; // Ajustar el ancho del icono según sea necesario
+    height: 24px; // Altura del icono ajustada a 24px
+}
+
+.button-text-museu {
+    text-transform: uppercase; // Texto en mayúsculas
+    font-family: 'Helvetica Neue', sans-serif; // Fuente
+    font-size: 21px; // Tamaño de la fuente
+    line-height: 38px; // Interlineado
+    display: flex; // Usamos flexbox para centrar el texto
+    align-items: center; // Alinear el texto verticalmente
+    justify-content: center; // Centrar horizontalmente el texto
+}

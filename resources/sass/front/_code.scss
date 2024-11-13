@@ -1,0 +1,66 @@
+.bg-primaryColor {
+    background-color: $primaryColor; // Color de fondo
+}
+
+.text-secondaryColor {
+    color: $secondaryColor; // Color del texto
+}
+
+.text-uppercase {
+    text-transform: uppercase; // Texto en mayúsculas
+}
+
+.font-medium {
+    font-weight: 500; // Peso de la fuente
+}
+
+.text-19 {
+    font-size: 19px; // Tamaño de la fuente
+}
+
+.leading-25 {
+    line-height: 25px; // Interlineado
+}
+
+.border-grayColor {
+    border-color: $grayColor; // Color del borde
+}
+
+.rounded-7 {
+    border-radius: 7px; // Radio de borde
+}
+
+.h-50 {
+    height: 50px; // Altura
+}
+
+.border-1 {
+    border-width: 1px; // Grosor del borde
+}
+.submit-code{
+    background-color: $primaryColor;
+    border-radius: 7px;
+    height: 37px;
+    width: 109px;
+    color: $secondaryColor;
+    margin-top: 10px;
+    
+}
+
+.section-container {
+    width: 100%; // Para asegurar que ocupe el ancho completo
+    display: flex;
+    justify-content: center; // Centrar horizontalmente
+    margin-top: 50vh; // Mover el formulario hacia abajo desde la mitad de la pantalla
+    transform: translateY(-50% ); // Ajuste para centrar verticalmente en la mitad de la pantalla
+    padding: 0 44px;
+}
+
+
+
+@media only screen and (max-width: 768px) and (orientation: portrait) {
+    .section-container {
+        margin-top: 50vh; // Mover el formulario hacia abajo desde la mitad de la pantalla
+        transform: translateY(10%); // Ajuste para centrar verticalmente en la mitad de la pantalla
+    }
+}
