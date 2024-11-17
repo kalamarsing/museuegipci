@@ -128,7 +128,7 @@ html, body {
             display: flex;
             justify-content: space-between; // Separar botones
             width: calc(100% - 30px); // Ajustar el ancho de los botones
-            z-index: 10; // Asegurarse de que los botones se vean sobre otros elementos
+            z-index: 9; // Asegurarse de que los botones se vean sobre otros elementos
             background-color: #EFEFEF;
             
             .prev-button, .next-button {
@@ -270,7 +270,7 @@ html, body {
 
                 .visit-text {
                     font-size: 19px;
-                    line-height: 38px;
+                    line-height: 19px;;
                     color: #D66767; // Color del texto
                     flex: 1; // Para que ocupe el resto del espacio disponible
                 }
